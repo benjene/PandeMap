@@ -1,0 +1,155 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+        <link href="../static/styles/styles.css" rel="stylesheet" type="text/css">
+        <title>PandeMap</title>
+    </head>
+    <script src="/static/js/jquery-3.6.0.js"></script>
+    <script src="/static/js/main.js"></script>
+    <body>
+        <header>
+            <h1>PandeMap</h1>
+            <hr>
+            <h3>Analyze the effect of the COVID-19 pandemic on Montreal's geography</h3>
+        </header>
+        <main>
+            <div id="content">
+                <h3>Points of Interest</h3>
+                <hr>
+                <form id="mapForm" method="post" action="/generateMap">
+                    <span id="formGrid">
+                        <span id="leftCol">
+                            <fieldset><legend>Apparel</legend>
+                                <input class='check' type='checkbox' name='boutique' value='boutique'>	<label for='boutique'>Boutique</label><br>
+                                <input class='check' type='checkbox' name='clothes' value='clothes'>	<label for='clothes'>Clothes</label><br>
+                                <input class='check' type='checkbox' name='jewelry' value='jewelry'>	<label for='jewelry'>Jewelry</label><br>
+                                <input class='check' type='checkbox' name='second_hand' value='second_hand'>	<label for='second_hand'>Second Hand</label><br>
+                                <input class='check' type='checkbox' name='shoes' value='shoes'>	<label for='shoes'>Shoes</label><br>
+                            </fieldset>
+                            <fieldset><legend>Arts & Culture</legend>
+                                <input class='check' type='checkbox' name='cinema' value='cinema'>    <label for='cinema'>Cinemas</label><br>
+                                <input class='check' type='checkbox' name='events_venue' value='events_venue'>    <label for='events_venue'>Event Venues</label><br>
+                                <input class='check' type='checkbox' name='nightclub' value='nightclub'>    <label for='nightclub'>Nightclub</label><br>
+                                <input class='check' type='checkbox' name='place_of_worship' value='place_of_worship'>    <label for='place_of_worship'>Places of Worship</label><br>
+                                <input class='check' type='checkbox' name='social_centre ' value='social_centre '>    <label for='social_centre '>Social Centres</label><br>
+                                <input class='check' type='checkbox' name='theatre' value='theatre'>    <label for='theatre'>Theatres</label><br>
+                            </fieldset>
+                            <fieldset><legend>Food & Drink</legend>
+                                <input class='check' type='checkbox' name='alcohol' value='alcohol'>	<label for='alcohol'>Alcohol</label><br>
+                                <input class='check' type='checkbox' name='bakery' value='bakery'>	<label for='bakery'>Bakery</label><br>
+                                <input class='check longer' type='checkbox' name='convenience' value='convenience'>	<label for='convenience'>Convenience Stores</label><br>
+                                <input class='check' type='checkbox' name='deli' value='deli'>	<label for='deli'>Deli</label><br>
+                                <input class='check' type='checkbox' name='greengrocer' value='greengrocer'>	<label for='greengrocer'>Green Grocers</label><br>
+                                <input class='check' type='checkbox' name='health_food' value='health_food'>	<label for='health_food'>Health Foods</label><br>
+                                <input class='check' type='checkbox' name='supermarket' value='supermarket'>	<label for='supermarket'>Supermarket</label><br>
+                            </fieldset>
+                            <fieldset><legend>Dining</legend>
+                                <input class='check' type='checkbox' name='bar' value='bar'>    <label for='bar'>Bars</label><br>
+                                <input class='check' type='checkbox' name='cafe' value='cafe'>    <label for='cafe'>Cafes</label><br>
+                                <input class='check' type='checkbox' name='fast_food' value='fast_food'>    <label for='fast_food'>Fast Food</label><br>
+                                <input class='check' type='checkbox' name='internet_cafe' value='internet_cafe'>    <label for='internet_cafe'>Internet Cafes</label><br>
+                                <input class='check' type='checkbox' name='restaurant' value='restaurant'>    <label for='restaurant'>Restaurants</label><br>
+                            </fieldset>
+                        </span>
+                        <span id="rightCol">
+                            <fieldset><legend>Hobby</legend>
+                                <input class='check' type='checkbox' name='bicycle' value='bicycle'>	<label for='bicycle'>Bicycles</label><br>
+                                <input class='check' type='checkbox' name='car' value='car'>	<label for='car'>Cars</label><br>
+                                <input class='check' type='checkbox' name='computer' value='computer'>	<label for='computer'>Computers</label><br>
+                                <input class='check' type='checkbox' name='electronics' value='electronics'>	<label for='electronics'>Electronics</label><br>
+                                <input class='check' type='checkbox' name='music' value='music'>	<label for='music'>Music</label><br>
+                                <input class='check' type='checkbox' name='musical_instrument' value='musical_instrument'>	<label for='musical_instrument'>Musical Instruments</label><br>
+                                <input class='check' type='checkbox' name='outdoor' value='outdoor'>	<label for='outdoor'>Outdoor</label><br>
+                                <input class='check' type='checkbox' name='sports' value='sports'>	<label for='sports'>Sporting Goods</label><br>
+                            </fieldset>
+                            <fieldset><legend>Home & Garden</legend>
+                                <input class='check' type='checkbox' name='antiques' value='antiques'>	<label for='antiques'>Antiques</label><br>
+                                <input class='check' type='checkbox' name='department_store' value='department_store'>	<label for='department_store'>Department Stores</label><br>
+                                <input class='check' type='checkbox' name='florist' value='florist'>	<label for='florist'>Florists</label><br>
+                                <input class='check' type='checkbox' name='furniture' value='furniture'>	<label for='furniture'>Furniture</label><br>
+                                <input class='check' type='checkbox' name='garden_centre' value='garden_centre'>	<label for='garden_centre'>Garden Centres</label><br>
+                                <input class='check' type='checkbox' name='hardware' value='hardware'>	<label for='hardware'>Hardware Store</label><br>
+                            </fieldset>
+                            <fieldset><legend>Tourism</legend>
+                                <input class='check' type='checkbox' name='guest_house' value='guest_house'>	<label for='guest_house'>Guest Houses</label><br>
+                                <input class='check' type='checkbox' name='hostel' value='hostel'>	<label for='hostel'>Hostels</label><br>
+                                <input class='check' type='checkbox' name='hotel' value='hotel'>	<label for='hotel'>Hotels</label><br>
+                                <input class='check' type='checkbox' name='information' value='information'>	<label for='information'>Tourist Information</label><br>
+                                <input class='check' type='checkbox' name='motel' value='motel'>	<label for='motel'>Motels</label><br>
+                                <input class='check' type='checkbox' name='travel_agency' value='travel_agency'>	<label for='travel_agency'>Travel Agencies</label><br>
+                            </fieldset>
+                            <fieldset><legend>Services</legend>
+                                <input class='check' type='checkbox' name='childcare' value='childcare'>    <label for='childcare'>Childcare</label><br>
+                                <input class='check' type='checkbox' name='clinic' value='clinic'>    <label for='clinic'>Clinics</label><br>
+                                <input class='check' type='checkbox' name='funeral_directors' value='funeral_directors'>    <label for='funeral_directors'>Funeral Homes</label><br>
+                                <input class='check' type='checkbox' name='telephone' value='telephone'>    <label for='telephone'>Payphones</label><br>
+                                <input class='check' type='checkbox' name='toilets' value='toilets'>    <label for='toilets'>Public Toilets</label><br>
+                                <input class='check' type='checkbox' name='pharmacy' value='pharmacy'>    <label for='pharmacy'>Pharmacies</label><br>
+                            </fieldset>
+                            <fieldset><legend>Miscellaneous</legend>
+                                <input class='check' type='checkbox' name='cannabis' value='cannabis'>	<label for='cannabis'>Cannabis</label><br>
+                                <input class='check' type='checkbox' name='e-cigarette' value='e-cigarette'>	<label for='e-cigarette'>E-cigarettes</label><br>
+                                <input class='check' type='checkbox' name='erotic' value='erotic'>	<label for='erotic'>Erotic</label><br>
+                                <input class='check longer' type='checkbox' name='hairdresser' value='hairdresser'>	<label for='hairdresser'>Hairdressers</label><br>
+                                <input class='check' type='checkbox' name='herbalist' value='herbalist'>	<label for='herbalist'>Herbal Remedies</label><br>
+                                <input class='check' type='checkbox' name='money_lender' value='money_lender'>	<label for='money_lender'>Money Lenders</label><br>
+                                <input class='check' type='checkbox' name='vacant' value='vacant'>	<label for='vacant'>Vacant</label><br>
+                            </fieldset>
+                        </span>
+                    </span>
+                    <input id="submit" type="submit" name="submit" value="Plot">
+                    <span id="loading"><span class="loadingBox">Plot</span><img src="../static/files/loading.gif" width="50" alt="Loading..."></span>
+                        <label class="switch">
+                            <input id="newToggle" type="checkbox">
+                            <span class="slider"></span>
+                        </label>
+                        <span id="dateInfo">Pre-COVID Data</span>
+                </form>
+            </div>
+            <div id="map">
+                <img id="map_data" src="../static/mapOld.png" alt="Montreal map data">
+            </div>
+            <script>
+                let checkboxes = document.getElementsByClassName("check");
+                let labels = document.querySelectorAll("label");
+                console.log(labels);
+                for (let i = 0; i < checkboxes.length; i++) {
+                    for (let j = 0; j < labels.length; j++) {
+                        if (labels.item(j).htmlFor == checkboxes.item(i).name)
+                            labels.item(j).style.color = localStorage[checkboxes.item(i).name];
+                    }
+                }
+                document.getElementById("submit").style.display = "inline";
+                document.getElementById("loading").style.display = "none";
+                document.getElementById("submit").addEventListener("click", () => {
+                    let colours = ["#fea609", "#7f007f", "#007300", "#00005c", "#f80000", "#00b8b8"]
+                    let count = 0;
+                    for (let i = 0; i < checkboxes.length; i++) {
+                        if (checkboxes.item(i).checked) {
+                            localStorage[checkboxes.item(i).name] = colours[count % 6];
+                            count++;
+                        }
+                        else
+                            localStorage[checkboxes.item(i).name] = "#252422";
+                    }
+                    document.getElementById("submit").style.display = "none";
+                    document.getElementById("loading").style.display = "inline";
+                });
+
+                document.getElementById("newToggle").addEventListener("click", () => {
+                    if (document.getElementById("newToggle").checked) {
+                        document.getElementById("map_data").src = "../static/mapNew.png";
+                        document.getElementById("dateInfo").innerHTML = "Post-COVID Data";
+                    }
+                    else {
+                        document.getElementById("map_data").src = "../static/mapOld.png";
+                        document.getElementById("dateInfo").innerHTML = "Pre-COVID Data";
+                    }
+                });
+            </script>
+        </main>
+    </body>
+</html>

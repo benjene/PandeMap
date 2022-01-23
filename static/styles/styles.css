@@ -1,0 +1,206 @@
+@import url('https://fonts.googleapis.com/css?family=Bai+Jamjuree|Quicksand');
+
+body{
+    background-color: #403D39;
+    margin: 0;
+}
+
+header{
+    margin: 0;
+    padding: 50px;
+    width: 100vw - 100px;
+    background-color: #FFFCF2;
+}
+
+h1{
+    color: #252422;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 3em;
+    font-weight: normal;
+    margin: 0;
+}
+
+h3{
+    color: #252422;
+    font-family: 'Bai Jamjuree', sans-serif;
+    font-weight: normal;
+    font-size: 1.2em;
+    margin: 0;
+}
+
+
+hr{
+    height: 2px;
+    background-color: #EB5E28;
+    width: 750px;
+    margin: 10px 0;
+    border: none;
+}
+
+main{
+    padding: 4vw;
+    margin: 0 auto;
+}
+
+#map{
+    width: 60vw;
+    height: 51vw;
+    border: 5px solid #252422;
+    overflow: hidden;
+}
+
+#map_data{
+    width: 70vw;
+    height: 70vw;
+    margin: -10vw 0 0 -5vw;
+}
+
+#content{
+    width: 24vw;
+    padding: 25px;
+    border: 5px solid #252422;
+    background-color: #CCC5B9;
+    float: right;
+}
+
+#content>h3{
+    font-size: 1.5em;
+}
+
+#content>hr{
+    width: 200px;
+}
+
+#formGrid{
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 5px 10px;
+    margin-bottom: 10px;
+}
+
+#leftCol{
+    grid-column: 1 / 2;
+}
+
+#rightCol{
+    grid-column: 2 / 3;
+}
+
+label, #submit, #dateInfo{
+    color: #252422;
+    font-family: 'Quicksand', sans-serif;
+}
+
+legend{
+    color: #252422;
+    font-family: 'Bai Jamjuree', sans-serif;
+}
+
+#submit{
+    background-color: #FFFCF2;
+    border: 2px solid #252422;
+    border-radius: 0;
+    margin: 6px 3px -6px 0;
+    padding: 5px 15px;
+    font-size: 1.2em;
+    cursor: pointer;
+    float: right;
+}
+
+#submit:hover{
+    background-color: #EB5E28;
+}
+
+.check{
+    border-radius: 0;
+    border: 2px solid #252422;
+    font-weight: bold;
+}
+
+.longer{
+    font-size: 90%;
+}
+
+#loading{
+    display: none;
+    float: right;
+}
+
+#loading>img{
+    margin:0 11px -17px;
+}
+
+.loadingBox{
+    background-color: #FFFCF2;
+    color: #FFFCF2;
+    border: 2px solid #252422;
+    border-radius: 0;
+    padding: 7px 15px 6px;
+    font-size: 1.2em;
+    margin: -4px -68px 0 0;
+}
+
+#dateInfo{
+    position: relative;
+    top: 20px;
+}
+
+fieldset{
+  border-color: #252422;
+}
+
+/* from w3schools */
+
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #252422;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: #FFFCF2;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #EB5E28;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #EB5E28;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
